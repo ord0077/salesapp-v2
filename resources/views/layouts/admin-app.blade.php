@@ -66,7 +66,7 @@ new WOW().init();
 </li>
 @if(Auth::user()->role_id == 1)
 <li>
-<a href="http://salesappuat.hblasset.com:3333/#/user/{{Auth::user()->id}}"><i class="fa fa-book nav_icon"></i> Account Opening Form</a>
+<a href="http://salesapp.hblasset.com:3333/#/user/{{Auth::user()->id}}"><i class="fa fa-book nav_icon"></i> Account Opening Form</a>
 <!-- <a href="http://localhost:8081/#/user/{{Auth::user()->id}}"><i class="fa fa-book nav_icon"></i> Account Opening Form</a> -->
 </li>
 @endif

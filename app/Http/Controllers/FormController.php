@@ -535,7 +535,8 @@ $arr = array (
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-CURLOPT_URL => "http://crm-test.hblasset.com:3001/api/dar",
+// CURLOPT_URL => "http://crm-test.hblasset.com:3001/api/dar",
+CURLOPT_URL => "http://daoflive.hblasset.com:3007/api/dar",
 CURLOPT_RETURNTRANSFER => true,
 CURLOPT_ENCODING => "",
 CURLOPT_MAXREDIRS => 10,
