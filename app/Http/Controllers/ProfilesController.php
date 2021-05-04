@@ -72,14 +72,18 @@ public function save_risk_profile(Request $r){
 
 
 
-    $counts = DB::table('rp_count')->pluck('counts');
-    $res = $counts[0];
-    if($res > 0){
-        DB::table('rp_count')->where('id','=',1)->update(['counts'=>$res+1]);
-    }
-    else{
-        DB::table('rp_count')->insert(['counts'=>$res++]);
-    }
+    // $counts = DB::table('rp_count')->first();
+
+    // $res = 0;
+
+    // if($counts){
+    //     DB::table('rp_count')->where('id','=',1)->update(['counts'=>$res+1]);   
+    // }
+
+    // else{
+    //     DB::table('rp_count')->insert(['counts'=>++$res]);
+    // }
+
 
     $args = [
     "client_name" => $r->client_name,
