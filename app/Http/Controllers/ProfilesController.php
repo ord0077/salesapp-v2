@@ -70,36 +70,20 @@ public function checkClientDetails(Request $r){
 
 public function save_risk_profile(Request $r){      
 
-
-
-    // $counts = DB::table('rp_count')->first();
-
-    // $res = 0;
-
-    // if($counts){
-    //     DB::table('rp_count')->where('id','=',1)->update(['counts'=>$res+1]);   
-    // }
-
-    // else{
-    //     DB::table('rp_count')->insert(['counts'=>++$res]);
-    // }
-
-
     $args = [
-    "client_name" => $r->client_name,
-    "client_email" => $r->client_email,
-    "client_number" => $r->client_number,
-    "client_cnic" =>  $r->client_cnic,
-    "location" => $r->location,
-    "choosen_fund" => explode('|',$r->choosen_fund)[1] ?? '',
-    "choosen_fund_id" => explode('|',$r->choosen_fund)[0] ?? '',
-    "irf" => $r->irf,
-    "crf" => $r->crf,
-    "user_id" => $r->user_id,
-    "decision" => $r->decision,
-    "userScore" => array_sum([$r->q1,$r->q2,$r->q3,$r->q4,$r->q5,$r->q6,$r->q7,$r->q8]),
+        "client_name" => $r->client_name,
+        "client_email" => $r->client_email,
+        "client_number" => $r->client_number,
+        "client_cnic" =>  $r->client_cnic,
+        "location" => $r->location,
+        "choosen_fund" => explode('|',$r->choosen_fund)[1] ?? '',
+        "choosen_fund_id" => explode('|',$r->choosen_fund)[0] ?? '',
+        "irf" => $r->irf,
+        "crf" => $r->crf,
+        "user_id" => $r->user_id,
+        "decision" => $r->decision,
+        "userScore" => array_sum([$r->q1,$r->q2,$r->q3,$r->q4,$r->q5,$r->q6,$r->q7,$r->q8]),
     ];
-
     
     $success = Risk::create($args);
     return $success ? redirect('rpqmessage') : redirect('welcome')->with('rpq_err_msg','RPQ has not been submitted');

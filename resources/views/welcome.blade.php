@@ -738,11 +738,11 @@ var check = "Product Not Selected";
 $('#pns').text(check);
 }
 
-$('#recommended_funds').on('touchstart click', function(){
+$('#recommended_funds').on('touchstart change', function(){
 	    $('#choosen_fund').val($('#recommended_funds').val());  
 });
 
-$('#risk_funds').on('touchstart click', function(){
+$('#risk_funds').on('touchstart change', function(){
 	    $('#choosen_fund').val($('#risk_funds').val());  
 });
 
